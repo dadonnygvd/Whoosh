@@ -1,0 +1,13 @@
+html, body {
+  margin: 0px;
+  height: 100%;
+  font-family: arial;
+  overflow: hidden;
+}
+
+.car {
+  width: 20px;
+  height: 80px;
+  background-color: red;
+  position: absolute;
+}
