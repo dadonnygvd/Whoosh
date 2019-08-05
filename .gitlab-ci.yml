@@ -1,0 +1,31 @@
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  before_script: 
+    - npm install
+  stage: build
+  script: 
+    - npm run build
+  image: "node:11"
+  artifacts:
+    paths:
+      - dist/
+
+test:
+  before_script: 
+    - npm install
+  stage: test
+  script: 
+    - npm run test
+  image: "node:11"
+
+deploy:
+  stage: deploy
+  image: finkingma/etg-highscore-ci:0.7.0
+  script:
+    - BUCKETNAME=whoosh-the-game ./uploadToS3.sh
+  dependencies:
+    - build
