@@ -30,7 +30,7 @@ export class Car {
     
     if (!this.break) {
       let directionDifference = this.carDirection - this.moveDirection
-      this.moveDirection += directionDifference / (Math.abs(this.speed) + 1)
+      this.moveDirection += directionDifference / ((Math.abs(this.speed) / 10) + 1)
     }
 
     this.speed *= this.data.friction
