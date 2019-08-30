@@ -5,6 +5,7 @@ export class Car {
   leftPos:number = 0
   topPos:number = 0
   speed:number = 0
+  driftSpeed:number = 0
   carDirection:number = 0
   moveDirection:number = 0
   forward:boolean = false
@@ -16,6 +17,10 @@ export class Car {
 
   constructor () {
     this.data = data
+  }
+  placeCar(leftPos:number, topPos:number) {
+    this.leftPos = leftPos
+    this.topPos = topPos
   }
   animate() {
     this.adjustSpeedAndDirection()
@@ -46,11 +51,13 @@ export class Car {
   moveForward() {
     if (this.speed < this.data.maxSpeed) {
       this.speed++
+      this.updateDriftSpeed()
     }
   }
   moveBackward() {
     if (this.speed > -this.data.maxSpeed) {
       this.speed--
+      this.updateDriftSpeed()
     }
   }
   doBreak() {
@@ -61,6 +68,9 @@ export class Car {
     } else {
       this.speed = 0;
     }
+  }
+  updateDriftSpeed() {
+    this.driftSpeed = this.speed
   }
   steerLeft() {
     if (this.speed >= 0) {
@@ -77,6 +87,10 @@ export class Car {
     }
   }
   getTurnSpeed() {
+    if (this.break) {
+      return (this.data.turnSpeed * (Math.abs((this.driftSpeed * this.speed) / 5) / 10))
+    }
+    
     return (this.data.turnSpeed * (Math.abs(this.speed) / 10))
   }
   toRadians (angle:number) {
