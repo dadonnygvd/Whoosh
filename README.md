@@ -6,7 +6,7 @@ You are a GTA style car cruising through the ghetto, until you find a squeaking 
 1) First we will implement cruising through the ghetto. Just some core gameplay stuff:
 - Adding visuals to the car
 - Design a map that you drive through
-- Visuals for road
+- Visuals for roadje
 - Visuals for top of buildings (that you crash in to)
 - Adding collision points in the ghetto, so that you can actually crash
 - Adding crash mechanics (something like 3 hits and you're kaboom!)
