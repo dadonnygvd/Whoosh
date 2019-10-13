@@ -5,7 +5,9 @@ You are a GTA style car cruising through the ghetto, until you find a squeaking 
 ### Roadmap
 1) First we will implement cruising through the ghetto. Just some core gameplay stuff:
 - Adding visuals to the car
-- Adding a ghetto that you can cruise through
+- Design a map that you drive through
+- Visuals for road
+- Visuals for top of buildings (that you crash in to)
 - Adding collision points in the ghetto, so that you can actually crash
 - Adding crash mechanics (something like 3 hits and you're kaboom!)
 - some minor improvements on the driving mechanics
@@ -16,4 +18,7 @@ You are a GTA style car cruising through the ghetto, until you find a squeaking 
 2) Next we will add some other stuff to hit or kill along the way. Mainly stuff to keep you engaged
 - walking AI supported things on the sidewalk that you can use to paint your tires a new color
 - driving cars on the road that you can bump into
+- walking mechanics
 - Weapons. Like duuhh
+- Zombie mode
+- Multi player option (log in with your person)
